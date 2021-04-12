@@ -30,9 +30,6 @@ except ImportError:
 class InstallTypeinfo(install):
     def run(self):
         install.run(self)
-        for pyi in glob.glob("typehinting/*.pyi"):
-            shutil.copy(pyi, self.install_purelib)
-
 
 cmdclass['install'] = InstallTypeinfo
 
